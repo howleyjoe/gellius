@@ -754,7 +754,7 @@ echo "</div>";
 
 } else {
 
-echo "<p>Welcome to the Graphical Engine for Looking at and Learning from Interesting and Unusual Texts (GELLIUS).</p>";
+echo "<p>Welcome to the Graphical Engine for Looking at and Learning from Interesting and Unusual Sources (GELLIUS).</p>";
 echo "<p>This program uses a text derived from the Lacus Curtius version of the Loeb public domain text.</p>";
 echo "<p>May I recommend the <a href='index.php?mode=map'>visual map</a>?</p>";
 
