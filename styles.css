@@ -1,0 +1,216 @@
+body {
+font-family: verdana;
+margin: 0;
+padding: .15em;
+border: 0;
+}
+
+a:hover { color: red;}
+
+
+#top {
+width: 100%;
+text-align: center;
+font-size: .9em;
+border: 1px dotted black;
+background-color: #eeeeee;
+}
+
+#notetop {
+width: 90%;
+text-align: center;
+font-size: 1.1em;
+font-weight: bold;
+border: 1px solid grey;
+}
+
+
+.pr_caput {
+ font-style: italic;
+ text-align: center;
+}
+
+
+.wee {
+font-size: .5em;
+}
+.small {
+font-size: .75em;
+}
+
+#lengths {
+font-size: 1em;
+border: 0;margin: 0;padding: 0;
+}
+#lengths td {
+border: 0;margin: 0;padding: 0;
+}
+.avg {
+background-color: #cccccc;
+}
+
+
+
+.liber {
+border: 1px solid black;
+background-color: #cccccc;
+margin: 1em;
+}
+.liber h1 {
+position: relative;
+top: -1em;
+background-color: #ffffff;
+border: 1px solid black;
+width: 3em;
+text-align: center;
+padding: .25em;
+font-size: 1.5em;
+
+}
+
+
+
+.graphical_chapter {
+ display: block;
+}
+div.graphical_chapter {
+/* float: left;*/
+ border: 2px dotted green;
+}
+div.graphical_book {
+ border: 1px solid black;
+ display: block;
+ margin-top: 1em;
+}
+
+
+a.len img {border: 0;}
+a.len:hover img {margin-left: 4px;}
+
+div.tin_book { margin-right: 15%;}
+div.tin_chapframe { border: 1px solid #999999; padding: .7em;}
+span.tin_head {font-size: .8em; color: #0000FF;}
+span.tin_chabo {display: none; visibility: hidden; margin-left: 10%; margin-right: 20%; font-size: .9em;}
+a.tin_chap {display: block; }
+a.tin_chap:hover span.tin_chabo {displaY: block; visibility: visible;}
+a.tin_chap:hover {color: black;}
+
+div#all {
+	font-size: 3px;
+}
+
+.hl { background-color: #FF9999; text-decoration: blink; color: #000000; border: 1px solid black; padding: 1px;
+}
+.hlb { background-color: #9999FF; text-decoration: blink; color: #000000; border: 1px solid black; padding: 1px;
+}
+
+
+.minichap {
+margin: 2px;
+
+border: 1px solid black;
+
+}
+
+
+
+
+
+a.chart {
+color: inherit;
+text-decoration: none;
+border: 1px solid black;
+}
+a.chart:hover {
+border: 1px solid cyan;
+}
+span.chart {
+/*float: left; display: block;*/
+}
+span.chartbook {
+display: block;
+/*float: left;
+width: 200px;*/
+background-color: #ffffff;
+
+}
+.detailbar {
+visibility: hidden;
+position: fixed;
+height: 10%;
+top:90%;
+background-color: #ffffff;
+font-size: 14pt;
+}
+a.chart:hover .detailbar {
+visibility: visible;
+}
+
+
+
+
+
+
+
+span.chartbookCOL {
+display: block;
+width: 4%;
+border: 3px solid black;
+float: left;
+}
+a.chartCOL {
+text-decoration: none;
+border: 1px solid: black;
+
+}
+a.chartCOL img{
+border: 1px solid black;
+}
+.detailbarCOL {
+display: block;
+visibility: hidden;
+position: fixed;
+left: 0;
+top:0;
+background-color: #cccccc;
+font-size: 2em;
+border: 1px solid black;
+color: black;
+}
+a.chartCOL:hover .detailbarCOL {
+visibility: visible;
+}
+a.chartCOL:hover img {
+border-color: #FFFFFF;
+}
+span.labelCOL {
+font-weight: bold;
+}
+div.bookheadCOL {
+text-align: center;
+font-size: 12pt;
+}
+
+
+
+
+/*these are for note functions:*/
+
+.chapsel {
+font-size: 2em;
+font-weight: bold;
+}
+
+#contentlist {
+width: 50%;
+position: absolute;
+border: 1px solid red;
+}
+#notetools {
+width: 50%;
+position: fixed;
+left: 50%;
+top: 10%;
+border: 1px solid red;
+background-color: #ffcccc;
+}
