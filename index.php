@@ -770,7 +770,9 @@ function chapout ($naid, $bobo, $chch, $hehe, $dydy) {
 $dydy = str_replace ("\n","<br />",$dydy);
 
 echo "<div class='chapter'>\n";
-echo "<div class='chapinfo'><span class='book'>book $bobo</span> <span class='chapno'>chapter $chch</span> <a href='edit.php?naid=$naid'>[__EDIT__]</a></div>\n";
+echo "<div class='chapinfo'><span class='book'>book $bobo</span> <span class='chapno'>chapter $chch</span>";
+#echo "<a href='edit.php?naid=$naid'>[__EDIT__]</a>";
+echo "</div>\n";
 echo "<h2 class='chaphead'>$hehe</h2>\n";
 echo "<div class='chapterbody'>$dydy</div>\n";
 echo "</div>\n";
