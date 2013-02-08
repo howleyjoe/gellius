@@ -1,6 +1,9 @@
 <?php
 
-$dbh=mysql_connect ("localhost", "root", "root") or die ('I cannot connect to the database because: ' . mysql_error());
+require_once("config.php");
+global $DB_HOST, $DB_USERNAME, $DB_PASSWORD;
+
+$dbh=mysql_connect ($DB_HOST, $DB_USERNAME, $DB_PASSWORD) or die ('I cannot connect to the database because: ' . mysql_error());
 mysql_select_db ("noctes"); 
 
 ?>
