@@ -61,7 +61,7 @@ echo "<tr><th>$tid</th><td>$book:$chapter</td><td>$text</td></tr>\n";
 /*
 $hl = strlen($htext)/10;
 $bl = strlen($btext)/100;
-echo "<tr><th>$hbook</th><td>$hchapter</td><td><img src='red.gif' height='10' width='$hl' /> <img src='red.gif' height='10' width='$bl' /></td></tr>";
+echo "<tr><th>$hbook</th><td>$hchapter</td><td><img src='images/red.gif' height='10' width='$hl' /> <img src='images/red.gif' height='10' width='$bl' /></td></tr>";
 */
 
 
@@ -74,11 +74,11 @@ echo "<tr><th>$hbook</th><td>$hchapter</td><td><img src='red.gif' height='10' wi
 
 /* $tl = strlen($text) / 10;
  echo "<tr><td><a href='addboth.php?tid=$tid'>[X]</a></td>"; 
- echo "<td>$book</td><td>$chapter</td><td><img src='red.gif' height='10' width='$tl' /></td></tr>\n";
+ echo "<td>$book</td><td>$chapter</td><td><img src='images/red.gif' height='10' width='$tl' /></td></tr>\n";
 */
 
 
-/* echo "<tr><td><img src='red.gif' height='10' width='$tl' /></td></tr>";
+/* echo "<tr><td><img src='images/red.gif' height='10' width='$tl' /></td></tr>";
 */
 }
 ?>
