@@ -1,7 +1,10 @@
 <?php
 
-$dbh=mysql_connect ("localhost", "root", "root") or die ('I cannot connect to the database because: ' . mysql_error());
-mysql_select_db ("noctes"); 
+require_once("config.php");
+global $DB_HOST, $DB_USERNAME, $DB_PASSWORD;
+$dbh=mysql_connect ($DB_HOST, $DB_USERNAME, $DB_PASSWORD) or die ('I cannot connect to the database because: ' . mysql_error());
+
+mysql_select_db ("gellius"); 
 $mode = $_REQUEST["mode"];
 $wtype = $_REQUEST["wtype"];
 $and = $_REQUEST["and"];
@@ -147,7 +150,7 @@ while (list($naid,$book,$chap,$head,$body) = mysql_fetch_row($res)){
 
 //	echo "<a href='index.php?mode=indiv&naid=$naid'>";
 	echo "<a class='wee' href='edit.php?naid=$naid'>";
-	echo "$chap <img src='$col.gif' height='$heiho' width='40' /></a>\n";
+	echo "$chap <img src='images/$col.gif' height='$heiho' width='40' /></a>\n";
 	$prevbook = $book;
 	$inc ++;
 }
@@ -187,8 +190,8 @@ if ($prevbook != $book) {
 	$bba = $bbto/$binc;
 	$bba = $bba / $bodyfactor;
 	echo "<tr class='avg'><td></td>";
-	echo "<td><img src='blue.gif' height='$hei' width='$bha' alt='$alt' /></td>";
-	echo "<td><img src='red.gif' height='$hei' width='$bba' alt='$alt' /></td></tr>\n";
+	echo "<td><img src='images/blue.gif' height='$hei' width='$bha' alt='$alt' /></td>";
+	echo "<td><img src='images/red.gif' height='$hei' width='$bba' alt='$alt' /></td></tr>\n";
 	echo "<tr><td colspan='3'><a href='index.php?mode=lengths&book=$book'>LIBER $book</a></td></tr>\n";
 	$binc = 0;
 	$bhto = 0;
@@ -215,9 +218,9 @@ if ($ratio>100) {$ratio=0;}
 $alt = "$book:$chap";
 
 if ($and != "justavg"){
-echo "<tr><td><img src='green.gif' height='$hei' width='$ratio' /></td>";
-echo "<td><a class='len' href='index.php?mode=indiv&naid=$naid'><img src='blue.gif' height='$hei' width='$hl' alt='$alt' /></a></td>";
-echo "<td><a class='len' href='index.php?mode=indiv&naid=$naid'><img src='red.gif' height='$hei' width='$bl' alt='$alt' /></a></td></tr>\n";
+echo "<tr><td><img src='images/green.gif' height='$hei' width='$ratio' /></td>";
+echo "<td><a class='len' href='index.php?mode=indiv&naid=$naid'><img src='images/blue.gif' height='$hei' width='$hl' alt='$alt' /></a></td>";
+echo "<td><a class='len' href='index.php?mode=indiv&naid=$naid'><img src='images/red.gif' height='$hei' width='$bl' alt='$alt' /></a></td></tr>\n";
 }
 
 $prevbook = $book;
@@ -227,8 +230,8 @@ $ba = $bto/$inc;
 $ba = $ba / 10;
 echo "<tr><td colspan='3'>avg</td></tr>\n";
 echo "<tr class='avg'><td></td>";
-echo "<td><img src='blue.gif' height='$hei' width='$ha' alt='$alt' /></td>";
-echo "<td><img src='red.gif' height='$hei' width='$ba' alt='$alt' /></td></tr>\n";
+echo "<td><img src='images/blue.gif' height='$hei' width='$ha' alt='$alt' /></td>";
+echo "<td><img src='images/red.gif' height='$hei' width='$ba' alt='$alt' /></td></tr>\n";
 ?></table><?
 
 } elseif ($mode == "indiv") { /* INDIVIDUAL ENTRY DISPLAY */
@@ -291,8 +294,8 @@ $chapheigh = $chapheigh * 10;
 $chapwidth = $chapwidth * 10;
 
 echo "<div class='graphical_chapter'>\n";
-echo "<img src='blue.gif' width='$chapwidth' height='8' class='graphical_chapter' />";
-echo "<img src='red.gif' width='$chapwidth' height='$chapheigh' class='graphical_chapter' alt='$naid' />";
+echo "<img src='images/blue.gif' width='$chapwidth' height='8' class='graphical_chapter' />";
+echo "<img src='images/red.gif' width='$chapwidth' height='$chapheigh' class='graphical_chapter' alt='$naid' />";
 echo "\n</div>\n";
 
 $prev = $book;
@@ -577,14 +580,14 @@ while (list($naid,$book,$chap,$head,$body) = mysql_fetch_row($res)){
 
 	 if ($searchword) {
 	 	if ( strpos(strtolower($body),strtolower($searchword)) OR strpos(strtolower($head),strtolower($searchword))) {
-	 	$sear = "style='background-image: url(mesh.gif);'";
+	 	$sear = "style='background-image: url(images/mesh.gif);'";
 	 	$hitcount ++;
 	 	$hitlist = $hitlist . "($book.$chap), ";
 	 	}
 	 }
 	 
 	 if ($type==$wtype) {
-	 	$sear = "style='background-image: url(mesh.gif);'";
+	 	$sear = "style='background-image: url(images/mesh.gif);'";
 	 	$hitcount ++;
 	 	$hitlist = $hitlist . "($book.$chap), ";
 	 }
@@ -602,7 +605,7 @@ while (list($naid,$book,$chap,$head,$body) = mysql_fetch_row($res)){
 	 	}	
 	}
 	echo "<a style='display: block; background-color: $z;' class='chartCOL' href='index.php?mode=singleview&naid=$naid$searchpass'>";
-	echo "<img $sear src='transparent.png' width='100%' height='$d' />";
+	echo "<img $sear src='images/transparent.png' width='100%' height='$d' />";
 	echo "<div class='detailbarCOL'><span class='labelCOL'>$book.$chap:</span> $head<br />";
 	#echo "<span class='labelCOL'>narrative type:</span> $types[$type]";
 	
@@ -747,7 +750,7 @@ while (list($inaid,$ichap,$ibody)=mysql_fetch_row($intres)){
 	$cres = mysql_query($csql);
 	list ($typecol) = mysql_fetch_row($cres);
 #	echo $tsql;
-	echo "<div style='background-color: $typecol; width: $c%; display: block; float: left; border: 3px solid black; height: $h%;'><a href='index.php?mode=singleview&naid=$inaid'><img src='transparent.png' width='100%' style='border:0;' /></a></div>";
+	echo "<div style='background-color: $typecol; width: $c%; display: block; float: left; border: 3px solid black; height: $h%;'><a href='index.php?mode=singleview&naid=$inaid'><img src='images/transparent.png' width='100%' style='border:0;' /></a></div>";
 }
 
 echo "</div>";
