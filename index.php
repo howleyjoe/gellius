@@ -580,14 +580,14 @@ while (list($naid,$book,$chap,$head,$body) = mysql_fetch_row($res)){
 
 	 if ($searchword) {
 	 	if ( strpos(strtolower($body),strtolower($searchword)) OR strpos(strtolower($head),strtolower($searchword))) {
-	 	$sear = "style='background-image: url(mesh.gif);'";
+	 	$sear = "style='background-image: url(images/mesh.gif);'";
 	 	$hitcount ++;
 	 	$hitlist = $hitlist . "($book.$chap), ";
 	 	}
 	 }
 	 
 	 if ($type==$wtype) {
-	 	$sear = "style='background-image: url(mesh.gif);'";
+	 	$sear = "style='background-image: url(images/mesh.gif);'";
 	 	$hitcount ++;
 	 	$hitlist = $hitlist . "($book.$chap), ";
 	 }
